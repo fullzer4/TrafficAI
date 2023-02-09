@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  auth:
+    image: apiauthtrafficai
+    build:
+      context: ./backend/auth
+      dockerfile: Dockerfile
+    ports:
+      - 4000:4000
+
+  ai:
+    image: aitrafficai
+    build:
+      context: ./backend/AIapi
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+
+  website:
+    image: websitetrafficai
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+

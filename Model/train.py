@@ -1,8 +1,6 @@
 import argparse
 import torch
 from ultralytics import YOLO
-from IPython.display import Image
-from IPython import display
 from roboflow import Roboflow
 import subprocess
 import os
@@ -48,22 +46,20 @@ class data:
     def __init__(self):
         if args.data:
             
-            display.clear_output()
-            
             modeLine = ['yolo', 'checks']
             mode = subprocess.run(modeLine, capture_output=True, text=True)
             print(mode)    
             
             rf = Roboflow(api_key=apikey)
-            project = rf.workspace("roboflow-100").project("vehicles-q0x2v")
-            dataset = project.version(2).download("yolov8")
+            project = rf.workspace("gaurigodghase-gmail-com").project("vehicles-openimages-svzce")
+            dataset = project.version(1).download("yolov8")
             
 class train:
     def __init__(self):
         if args.train:
             torch.set_default_tensor_type('torch.FloatTensor')
             model = YOLO("yolov8s.pt")
-            model.train(data="./vehicles-2/data.yaml", epochs=10)
+            model.train(data="./vehicles-openimages-1/data.yaml", epochs=10)
             model.val()
             
             

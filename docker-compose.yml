@@ -17,14 +17,6 @@ services:
     ports:
       - 3000:3000
 
-  website:
-    image: websitetrafficai
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    ports:
-      - 8000:8000
-
   db:
     image: mysql:5.7
     restart: always

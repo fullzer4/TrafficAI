@@ -1,3 +1,0 @@
-[submodule "Model/traffic_count/ByteTrack"]
-	path = Model/traffic_count/ByteTrack
-	url = https://github.com/ifzhang/ByteTrack.git

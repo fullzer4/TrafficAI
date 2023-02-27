@@ -7,8 +7,8 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "app",
-    "version": "0.0.0"
+    "productName": "trafficai",
+    "version": "1.0.0"
   },
   "tauri": {
     "allowlist": {
@@ -33,7 +33,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.app.trafficai",
       "longDescription": "",
       "macOS": {
         "entitlements": null,

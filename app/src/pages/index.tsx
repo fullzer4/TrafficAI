@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
 import Image from "next/image";
-import Navbar from "../components/navbar";
-import Dropbox from "../components/dropbox";
+import isOnline from 'is-online';
 
 export default function App() {
+
+  useEffect(() => {
+    async function checkInternetConnection() {
+      const online = await isOnline();
+      if (online) {
+        console.log('Você está conectado à internet!');
+      } else {
+        window.location.href = '/dashboard';
+      }
+    }
+    checkInternetConnection();
+  }, []);
 
   return (
     <>

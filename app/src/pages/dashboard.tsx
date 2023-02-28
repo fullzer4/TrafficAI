@@ -4,11 +4,15 @@ import Image from "next/image";
 import Navbar from "../components/navbar";
 import Dropbox from "../components/dropbox";
 
-export default function App() {
+export default function Dashboard() {
 
   return (
     <>
-      <h1>login</h1>
+      <Navbar/>
+      <div className="content">
+        <Dropbox/>
+        <h1>Dashboard</h1>
+      </div>
     </>
   );
 }

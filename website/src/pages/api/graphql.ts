@@ -1,18 +1,13 @@
-import { ApolloServer } from "apollo-server";
+import { ApolloServer } from 'apollo-server-micro';
+// import { typeDefs } from '../../graphql/schema';
+// import { resolvers } from '../../graphql/resolvers';
 
-const server = new ApolloServer({
-
-})
+const apolloServer = new ApolloServer({  });
 
 export const config = {
-    api: {
-        bodyparser: false,
-    },
-}
+  api: {
+    bodyParser: false,
+  },
+};
 
-const startServer = server.start()
-
-export default async function handler(req, res){
-    await startServer;
-    await server.createHandler({ path: "/api/graphql" })(req, res)
-}
+export default apolloServer.createHandler({ path: '/api/graphql' });
